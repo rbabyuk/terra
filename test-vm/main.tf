@@ -1,7 +1,7 @@
 provider "google" {
   region      = var.region
   project     = var.project
-  credentials = file(var.gcp_auth_file)
+//  credentials = file(var.gcp_auth_file)
 }
 
 
@@ -49,8 +49,8 @@ resource "google_compute_instance" "default" {
 
 
 // Apply the firewall rule to allow external IPs to access this instance
-resource "google_compute_firewall" "jenkins-http" {
-  name    = "default-allow-http-jenkins"
+resource "google_compute_firewall" "jenkins-http-1" {
+  name    = "default-allow-http-jenkins-1"
   network = "default"
 
   allow {

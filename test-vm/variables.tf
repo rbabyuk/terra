@@ -2,10 +2,13 @@
 # This will be set as ENV variables
 # example: export TF_VAR_var_name
 
+/*
 variable "gcp_auth_file" {
   description = ""
   type        = string
 }
+*/
+
 
 variable "region" {
   description = "The region name you want to use for your projects"
