@@ -46,20 +46,3 @@ resource "google_compute_instance" "default" {
     block-project-ssh-keys = false
   }
 }
-
-
-// Apply the firewall rule to allow external IPs to access this instance
-resource "google_compute_firewall" "jenkins-http-1" {
-  name    = "default-allow-http-jenkins-1"
-  network = "default"
-
-  allow {
-    protocol = "tcp"
-    ports    = [var.listen_port]
-  }
-
-  // Allow traffic from everywhere to instances with an http-server tag
-  source_ranges = var.allowed_networks
-  target_tags   = ["generic"]
-}
-
